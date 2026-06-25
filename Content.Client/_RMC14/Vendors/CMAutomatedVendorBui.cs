@@ -13,6 +13,7 @@ using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
+using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static System.StringComparison;
@@ -23,6 +24,7 @@ namespace Content.Client._RMC14.Vendors;
 [UsedImplicitly]
 public sealed class CMAutomatedVendorBui : BoundUserInterface
 {
+    [Dependency] private readonly ILocalizationManager _loc = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IResourceCache _resource = default!;
@@ -133,13 +135,18 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
                     msg.AddText(name);
                     msg.PushNewline();
 
-                    if (!string.IsNullOrWhiteSpace(entity.Description))
-                        msg.AddText(entity.Description);
+                    var locData = _loc.GetEntityData(entity.ID);
+                    var tooltipDesc = locData.Attributes.TryGetValue("printer-desc", out var printerDesc)
+                        ? printerDesc
+                        : entity.Description;
+
+                    if (!string.IsNullOrWhiteSpace(tooltipDesc))
+                        msg.AddMarkupOrThrow(tooltipDesc);
 
                     var tooltip = new Tooltip();
                     tooltip.SetMessage(msg);
 
-                    uiEntry.TooltipLabel.ToolTip = entity.Description;
+                    uiEntry.TooltipLabel.ToolTip = tooltipDesc;
                     uiEntry.TooltipLabel.TooltipDelay = 0;
                     uiEntry.TooltipLabel.TooltipSupplier = _ => tooltip;
 
