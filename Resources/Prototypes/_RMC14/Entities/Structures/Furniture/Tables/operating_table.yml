@@ -33,6 +33,8 @@
     rotation: -90
     modifyBuckleDrawDepth: false
   - type: CMOperatingTable
+  - type: RMCSurgerySurface
+    delayMultiplier: 1
   - type: BuckleClimbable
   - type: Corrodible
     isCorrodible: false

@@ -1,0 +1,22 @@
+# Put any base item at the bottom of the particular sets.
+- type: entity
+  id: RMCIncisionToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type:
+      multiplier: 1.8
+    - tool:
+      - type:
+      multiplier: 1.6
+    - tool:
+      - type:
+      multiplier: 1.4
+    - tool:
+      - type:
+      multiplier: 1.2
+    - tool:
+      - type: CMScalpel
+      multiplier: 1

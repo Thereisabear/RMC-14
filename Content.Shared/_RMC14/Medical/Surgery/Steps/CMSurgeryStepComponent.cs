@@ -15,8 +15,16 @@ public sealed partial class CMSurgeryStepComponent : Component
     [DataField, AutoNetworkedField]
     public int Skill = 1;
 
+    public const float DefaultDelay = 1f;
+
+    [DataField]
+    public float Delay = DefaultDelay;
+
     [DataField]
     public ComponentRegistry? Tool;
+
+    [DataField]
+    public EntProtoId<SurgeryToolMultipliersComponent>? ToolMultipliers;
 
     [DataField]
     public ComponentRegistry? Add;
