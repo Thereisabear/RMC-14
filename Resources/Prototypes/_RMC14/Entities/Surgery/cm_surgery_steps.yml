@@ -12,6 +12,7 @@
   - type: CMSurgeryStep
     tool:
     - type: CMScalpel
+    toolMultipliers: RMCIncisionToolSpeeds
     add:
     - type: CMIncisionOpen
   - type: Sprite
@@ -29,6 +30,7 @@
   - type: CMSurgeryStep
     tool:
     - type: CMHemostat
+    toolMultipliers: RMCClampBleedersToolSpeeds
     add:
     - type: CMBleedersClamped
   - type: Sprite
@@ -44,6 +46,10 @@
   - type: CMSurgeryStep
     tool:
     - type: CMRetractor
+    - type: CMHemostat
+    - type: CMScalpel
+    # TODO improvised: crowbar, wirecutters, maintenance jack, fork, bayonet, kitchen knife, throwing knife, glass shard
+    toolMultipliers: RMCRetractToolSpeeds
     add:
     - type: CMSkinRetracted
   - type: Sprite
@@ -58,6 +64,7 @@
   - type: CMSurgeryStep
     tool:
     - type: CMBoneSaw
+    toolMultipliers: RMCSawToolSpeeds
     add:
     - type: CMRibcageSawed
   - type: Sprite
@@ -73,6 +80,7 @@
   - type: CMSurgeryStep
     tool:
     - type: CMRetractor
+    toolMultipliers: RMCPryEncasedToolSpeeds
     add:
     - type: CMRibcageOpen
   - type: Sprite
@@ -88,6 +96,7 @@
     skill: 2
     tool:
     - type: CMScalpel
+    toolMultipliers: RMCIncisionToolSpeeds
   - type: CMSurgeryCutLarvaRootsStep
   - type: Sprite
     sprite: _RMC14/Objects/Medical/Surgery/scalpel.rsi
@@ -103,6 +112,7 @@
     skill: 2
     tool:
     - type: CMHemostat
+    toolMultipliers: RMCPinchToolSpeeds
     bodyRemove:
     - type: VictimInfected
   - type: Sprite
@@ -119,6 +129,7 @@
   - type: CMSurgeryStep
     tool:
     - type: CMRetractor
+    toolMultipliers: RMCPryEncasedToolSpeeds
     remove:
     - type: CMRibcageOpen
   - type: Sprite
@@ -133,6 +144,7 @@
   - type: CMSurgeryStep
     tool:
     - type: CMBoneGel
+    toolMultipliers: RMCBoneMendToolSpeeds
     remove:
     - type: CMRibcageSawed
   - type: Sprite
@@ -147,6 +159,7 @@
   - type: CMSurgeryStep
     tool:
     - type: CMCautery
+    toolMultipliers: RMCCauterizeToolSpeeds
     remove:
     - type: CMSkinRetracted
     - type: CMBleedersClamped
@@ -165,6 +178,7 @@
     skill: 2
     tool:
     - type: CMBoneSaw
+    toolMultipliers: RMCSeverBoneToolSpeeds
     add:
     - type: RMCXenoOpen
   - type: Sprite
@@ -180,6 +194,7 @@
     skill: 2
     tool:
     - type: CMRetractor
+    toolMultipliers: RMCPryEncasedToolSpeeds
     add:
     - type: RMCXenoPryed
   - type: Sprite
@@ -195,6 +210,7 @@
     skill: 2
     tool:
     - type: CMScalpel
+    toolMultipliers: RMCIncisionToolSpeeds
     add:
     - type: RMCXenoCut
   - type: Sprite
@@ -210,6 +226,7 @@
     skill: 2
     tool:
     - type: CMHemostat
+    toolMultipliers: RMCPinchToolSpeeds
     add:
     - type: RMCXenoRemoved
   - type: Sprite

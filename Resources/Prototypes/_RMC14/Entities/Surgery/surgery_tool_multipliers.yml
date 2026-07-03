@@ -1,4 +1,5 @@
-# Put any base item at the bottom of the particular sets.
+# Put base tools at the bottom of whichever set if they are a parent.
+# Incision
 - type: entity
   id: RMCIncisionToolSpeeds
   categories: [ HideSpawnMenu ]
@@ -6,17 +7,134 @@
   - type: SurgeryToolMultipliers
     multipliers:
     - tool:
-      - type:
-      multiplier: 1.8
+      - type: RMCScalpelManager
+      multiplier: 1
     - tool:
-      - type:
-      multiplier: 1.6
-    - tool:
-      - type:
-      multiplier: 1.4
-    - tool:
-      - type:
-      multiplier: 1.2
+      - type: RMCLaserScalpel
+      multiplier: 1
     - tool:
       - type: CMScalpel
       multiplier: 1
+    # TODO: PICT system 1.2, bayonet 1.4, kitchen knife 1.4, throwing knife 1.8, glass shard 1.8
+
+# Cauterize
+- type: entity
+  id: RMCCauterizeToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: RMCLaserScalpel
+      multiplier: 1
+    - tool:
+      - type: CMCautery
+      multiplier: 1
+    # TODO: wound clamp 1.0, PICT system 1.2, cigarette 1.2, lighter 1.4, welding tool 1.6
+
+# Clamp bleeders
+- type: entity
+  id: RMCClampBleedersToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMHemostat
+      multiplier: 1
+    # TODO: wirecutters 1.4, cable coil 1.6
+
+# Retract
+- type: entity
+  id: RMCRetractToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMRetractor
+      multiplier: 1
+    - tool:
+      - type: CMHemostat
+      multiplier: 1.2
+    - tool:
+      - type: CMScalpel
+      multiplier: 1.8
+    # TODO: crowbar 1.4, wirecutters 1.6, maintenance jack 1.6, fork 1.8, bayonet 1.8, kitchen knife 1.8, throwing knife 1.8, glass shard 1.8
+
+# Saw
+- type: entity
+  id: RMCSawToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMBoneSaw
+      multiplier: 1
+    # TODO: bayonet 1.2, fireaxe 1.4, machete 1.4, hatchet 1.6, butcher knife 1.6
+
+# Pry - bone ribs
+- type: entity
+  id: RMCPryEncasedToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMRetractor
+      multiplier: 1
+    # TODO: crowbar 1.4, maintenance jack 1.6
+
+# Pinch — Remove Larva
+- type: entity
+  id: RMCPinchToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMHemostat
+      multiplier: 1
+    # TODO: wirecutters 1.4, fork 1.8
+
+# Pry I think this is for eye surgery
+- type: entity
+  id: RMCPryDelicateToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMRetractor
+      multiplier: 1
+    - tool:
+      - type: CMHemostat
+      multiplier: 1.2
+    # TODO: fork 1.4, wirecutters 1.6
+
+# Sever bone — amputation
+- type: entity
+  id: RMCSeverBoneToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMBoneSaw
+      multiplier: 1
+    # TODO: fireaxe 1.2, machete 1.2, hatchet 1.4, butcher knife 1.4, bayonet 1.6
+
+# Bone mend
+- type: entity
+  id: RMCBoneMendToolSpeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryToolMultipliers
+    multipliers:
+    - tool:
+      - type: CMBoneGel
+      multiplier: 1
+    # TODO: screwdriver 1.4
+
+
