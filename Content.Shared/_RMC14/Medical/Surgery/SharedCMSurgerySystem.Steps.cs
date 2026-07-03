@@ -39,17 +39,24 @@ public abstract partial class SharedCMSurgerySystem
     {
         if (ent.Comp.Tool != null)
         {
+            EntityUid? usedTool = null;
             foreach (var reg in ent.Comp.Tool.Values)
             {
-                if (!AnyHaveComp(args.Tools, reg.Component, out var tool))
-                    return;
-
-                if (_net.IsServer &&
-                    TryComp(tool, out CMSurgeryToolComponent? toolComp) &&
-                    toolComp.EndSound != null)
+                if (AnyHaveComp(args.Tools, reg.Component, out var tool))
                 {
-                    _audio.PlayPvs(toolComp.EndSound, tool);
+                    usedTool = tool;
+                    break;
                 }
+            }
+
+            if (usedTool == null)
+                return;
+
+            if (_net.IsServer &&
+                TryComp(usedTool, out CMSurgeryToolComponent? toolComp) &&
+                toolComp.EndSound != null)
+            {
+                _audio.PlayPvs(toolComp.EndSound, usedTool.Value);
             }
         }
 
@@ -148,19 +155,28 @@ public abstract partial class SharedCMSurgerySystem
         {
             args.ValidTools ??= new HashSet<EntityUid>();
 
+            var found = false;
             foreach (var reg in ent.Comp.Tool.Values)
             {
-                if (!AnyHaveComp(args.Tools, reg.Component, out var withComp))
+                if (AnyHaveComp(args.Tools, reg.Component, out var withComp))
                 {
-                    args.Invalid = StepInvalidReason.MissingTool;
-
-                    if (reg.Component is ICMSurgeryToolComponent tool)
-                        args.Popup = $"You need {tool.ToolName} to perform this step!";
-
-                    return;
+                    found = true;
+                    args.ValidTools.Add(withComp);
                 }
+            }
 
-                args.ValidTools.Add(withComp);
+            if (!found)
+            {
+                args.Invalid = StepInvalidReason.MissingTool;
+
+                foreach (var reg in ent.Comp.Tool.Values)
+                {
+                    if (reg.Component is ICMSurgeryToolComponent tool)
+                    {
+                        args.Popup = $"You need {tool.ToolName} to perform this step!";
+                        break;
+                    }
+                }
             }
         }
     }

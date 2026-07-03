@@ -10,6 +10,7 @@
   name: Cut with a scalpel
   components:
   - type: CMSurgeryStep
+    delay: 2
     tool:
     - type: CMScalpel
     toolMultipliers: RMCIncisionToolSpeeds
@@ -28,6 +29,7 @@
   name: Clamp the bleeders
   components:
   - type: CMSurgeryStep
+    delay: 2
     tool:
     - type: CMHemostat
     toolMultipliers: RMCClampBleedersToolSpeeds
@@ -44,6 +46,7 @@
   name: Retract the skin
   components:
   - type: CMSurgeryStep
+    delay: 2
     tool:
     - type: CMRetractor
     - type: CMHemostat
@@ -62,6 +65,7 @@
   name: Saw through bones
   components:
   - type: CMSurgeryStep
+    delay: 4
     tool:
     - type: CMBoneSaw
     toolMultipliers: RMCSawToolSpeeds
@@ -78,6 +82,7 @@
   name: Prise the bones open
   components:
   - type: CMSurgeryStep
+    delay: 2
     tool:
     - type: CMRetractor
     toolMultipliers: RMCPryEncasedToolSpeeds
@@ -127,6 +132,7 @@
   name: Close bones
   components:
   - type: CMSurgeryStep
+    delay: 2
     tool:
     - type: CMRetractor
     toolMultipliers: RMCPryEncasedToolSpeeds
@@ -142,6 +148,7 @@
   name: Mend ribcage
   components:
   - type: CMSurgeryStep
+    delay: 3
     tool:
     - type: CMBoneGel
     toolMultipliers: RMCBoneMendToolSpeeds
@@ -157,6 +164,7 @@
   name: Close incision
   components:
   - type: CMSurgeryStep
+    delay: 2
     tool:
     - type: CMCautery
     toolMultipliers: RMCCauterizeToolSpeeds
@@ -176,6 +184,7 @@
   components:
   - type: CMSurgeryStep
     skill: 2
+    delay: 4
     tool:
     - type: CMBoneSaw
     toolMultipliers: RMCSeverBoneToolSpeeds
@@ -192,6 +201,7 @@
   components:
   - type: CMSurgeryStep
     skill: 2
+    delay: 2
     tool:
     - type: CMRetractor
     toolMultipliers: RMCPryEncasedToolSpeeds
@@ -208,6 +218,7 @@
   components:
   - type: CMSurgeryStep
     skill: 2
+    delay: 4
     tool:
     - type: CMScalpel
     toolMultipliers: RMCIncisionToolSpeeds
@@ -224,6 +235,7 @@
   components:
   - type: CMSurgeryStep
     skill: 2
+    delay: 3
     tool:
     - type: CMHemostat
     toolMultipliers: RMCPinchToolSpeeds
