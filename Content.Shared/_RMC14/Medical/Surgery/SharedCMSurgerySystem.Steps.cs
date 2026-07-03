@@ -1,4 +1,5 @@
-﻿using Content.Shared._RMC14.Medical.Surgery.Conditions;
+﻿using Content.Shared._RMC14.CCVar;
+using Content.Shared._RMC14.Medical.Surgery.Conditions;
 using Content.Shared._RMC14.Medical.Surgery.Steps;
 using Content.Shared._RMC14.Medical.Surgery.Tools;
 using Content.Shared._RMC14.Xenonids.Parasite;
@@ -217,13 +218,90 @@ public abstract partial class SharedCMSurgerySystem
             _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
 
         var ev = new CMSurgeryDoAfterEvent(args.Surgery, args.Step);
-        var doAfter = new DoAfterArgs(EntityManager, user, 2, ev, body, part)
+        var doAfter = new DoAfterArgs(EntityManager, user, GetSurgeryDelay(user, body, step, validTools), ev, body, part)
         {
             BreakOnMove = true,
             TargetEffect = "RMCEffectHealBusy",
             MovementThreshold = 0.5f,
         };
         _doAfter.TryStartDoAfter(doAfter);
+    }
+
+    private float GetSurgeryDelay(EntityUid user, EntityUid body, EntityUid step, HashSet<EntityUid>? validTools)
+    {
+        var baseDelay = CompOrNull<CMSurgeryStepComponent>(step)?.Delay ?? CMSurgeryStepComponent.DefaultDelay;
+
+        var multiplier =
+            GetSkillMultiplier(user, step) *
+            GetToolMultiplier(user, step, validTools) *
+            GetSurfaceMultiplier(body) *
+            GetSelfMultiplier(user, body);
+
+        return baseDelay * MathF.Max(0.1f, multiplier);
+    }
+
+    private float GetSkillMultiplier(EntityUid user, EntityUid step)
+    {
+        if (TryComp(step, out CMSurgeryStepComponent? stepComp))
+            return _skills.GetSkillDelayMultiplier(user, stepComp.SkillType);
+
+        return 1f;
+    }
+
+    private float GetSelfMultiplier(EntityUid user, EntityUid body)
+    {
+        if (user != body)
+            return 1f;
+
+        return _config.GetCVar(RMCCVars.RMCSelfSurgeryDelayMultiplier);
+    }
+
+    private float GetToolMultiplier(EntityUid user, EntityUid step, HashSet<EntityUid>? validTools)
+    {
+        if (validTools == null || validTools.Count == 0)
+            return 1f;
+
+        foreach (var held in _hands.EnumerateHeld(user))
+        {
+            if (validTools.Contains(held))
+                return GetToolSuitability(step, held);
+        }
+
+        return 1f;
+    }
+
+    private float GetToolSuitability(EntityUid step, EntityUid tool)
+    {
+        if (TryComp(step, out CMSurgeryStepComponent? stepComp) &&
+            stepComp.ToolMultipliers is { } setId &&
+            _prototypes.TryIndex(setId, out var proto) &&
+            proto.TryGetComponent(out SurgeryToolMultipliersComponent? set, _compFactory))
+        {
+            foreach (var entry in set.Multipliers)
+            {
+                foreach (var reg in entry.Tool.Values)
+                {
+                    if (HasComp(tool, reg.Component.GetType()))
+                        return entry.Multiplier;
+                }
+            }
+        }
+
+        return 1f;
+    }
+
+    private float GetSurfaceMultiplier(EntityUid body)
+    {
+        if (TryComp(body, out BuckleComponent? buckle) &&
+            TryComp(buckle.BuckledTo, out RMCSurgerySurfaceComponent? surface))
+        {
+            return surface.DelayMultiplier;
+        }
+
+        if (_standing.IsDown(body))
+            return RMCSurgerySurfaceComponent.FloorDelayMultiplier;
+
+        return 1f;
     }
 
     private (Entity<CMSurgeryComponent> Surgery, int Step)? GetNextStep(EntityUid body, EntityUid part, Entity<CMSurgeryComponent?> surgery, List<EntityUid> requirements)
