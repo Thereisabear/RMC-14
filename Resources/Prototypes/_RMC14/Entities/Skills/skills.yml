@@ -165,6 +165,9 @@
   id: RMCSkillSurgery
   name: Surgery
   categories: [ HideSpawnMenu ]
+  components:
+  - type: SkillDefinition
+    delayMultipliers: [ 1.2, 1.2, 1, 0.6 ]
 
 - type: entity
   parent: RMCSkillBase
