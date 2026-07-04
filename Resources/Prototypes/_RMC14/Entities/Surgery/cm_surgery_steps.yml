@@ -13,6 +13,10 @@
     delay: 2
     tool:
     - type: CMScalpel
+    - type: RMCSurgeryBayonet
+    - type: RMCSurgeryKitchenKnife
+    - type: RMCSurgeryThrowingKnife
+    - type: RMCSurgeryGlassShard
     toolMultipliers: RMCIncisionToolSpeeds
     add:
     - type: CMIncisionOpen
@@ -32,6 +36,8 @@
     delay: 2
     tool:
     - type: CMHemostat
+    - type: RMCSurgeryWirecutter
+    - type: RMCSurgeryCableCoil
     toolMultipliers: RMCClampBleedersToolSpeeds
     add:
     - type: CMBleedersClamped
@@ -51,7 +57,14 @@
     - type: CMRetractor
     - type: CMHemostat
     - type: CMScalpel
-    # TODO improvised: crowbar, wirecutters, maintenance jack, fork, bayonet, kitchen knife, throwing knife, glass shard
+    - type: RMCSurgeryCrowbar
+    - type: RMCSurgeryWirecutter
+    - type: RMCSurgeryFork
+    - type: RMCSurgeryBayonet
+    - type: RMCSurgeryKitchenKnife
+    - type: RMCSurgeryThrowingKnife
+    - type: RMCSurgeryGlassShard
+    # TODO improvised: maintenance jack
     toolMultipliers: RMCRetractToolSpeeds
     add:
     - type: CMSkinRetracted
@@ -68,6 +81,11 @@
     delay: 4
     tool:
     - type: CMBoneSaw
+    - type: RMCSurgeryBayonet
+    - type: RMCSurgeryFireAxe
+    - type: RMCSurgeryMachete
+    - type: RMCSurgeryHatchet
+    - type: RMCSurgeryButcherKnife
     toolMultipliers: RMCSawToolSpeeds
     add:
     - type: CMRibcageSawed
@@ -85,6 +103,7 @@
     delay: 2
     tool:
     - type: CMRetractor
+    - type: RMCSurgeryCrowbar
     toolMultipliers: RMCPryEncasedToolSpeeds
     add:
     - type: CMRibcageOpen
@@ -101,6 +120,10 @@
     skill: 2
     tool:
     - type: CMScalpel
+    - type: RMCSurgeryBayonet
+    - type: RMCSurgeryKitchenKnife
+    - type: RMCSurgeryThrowingKnife
+    - type: RMCSurgeryGlassShard
     toolMultipliers: RMCIncisionToolSpeeds
   - type: CMSurgeryCutLarvaRootsStep
   - type: Sprite
@@ -117,6 +140,8 @@
     skill: 2
     tool:
     - type: CMHemostat
+    - type: RMCSurgeryWirecutter
+    - type: RMCSurgeryFork
     toolMultipliers: RMCPinchToolSpeeds
     bodyRemove:
     - type: VictimInfected
@@ -135,6 +160,7 @@
     delay: 2
     tool:
     - type: CMRetractor
+    - type: RMCSurgeryCrowbar
     toolMultipliers: RMCPryEncasedToolSpeeds
     remove:
     - type: CMRibcageOpen
@@ -151,6 +177,7 @@
     delay: 3
     tool:
     - type: CMBoneGel
+    - type: RMCSurgeryScrewdriver
     toolMultipliers: RMCBoneMendToolSpeeds
     remove:
     - type: CMRibcageSawed
@@ -167,6 +194,9 @@
     delay: 2
     tool:
     - type: CMCautery
+    - type: RMCSurgeryCigarette
+    - type: RMCSurgeryLighter
+    - type: RMCSurgeryWelder
     toolMultipliers: RMCCauterizeToolSpeeds
     remove:
     - type: CMSkinRetracted
@@ -187,6 +217,11 @@
     delay: 4
     tool:
     - type: CMBoneSaw
+    - type: RMCSurgeryFireAxe
+    - type: RMCSurgeryMachete
+    - type: RMCSurgeryHatchet
+    - type: RMCSurgeryBayonet
+    - type: RMCSurgeryButcherKnife
     toolMultipliers: RMCSeverBoneToolSpeeds
     add:
     - type: RMCXenoOpen
@@ -204,6 +239,7 @@
     delay: 2
     tool:
     - type: CMRetractor
+    - type: RMCSurgeryCrowbar
     toolMultipliers: RMCPryEncasedToolSpeeds
     add:
     - type: RMCXenoPryed
@@ -221,6 +257,10 @@
     delay: 4
     tool:
     - type: CMScalpel
+    - type: RMCSurgeryBayonet
+    - type: RMCSurgeryKitchenKnife
+    - type: RMCSurgeryThrowingKnife
+    - type: RMCSurgeryGlassShard
     toolMultipliers: RMCIncisionToolSpeeds
     add:
     - type: RMCXenoCut
@@ -238,6 +278,8 @@
     delay: 3
     tool:
     - type: CMHemostat
+    - type: RMCSurgeryWirecutter
+    - type: RMCSurgeryFork
     toolMultipliers: RMCPinchToolSpeeds
     add:
     - type: RMCXenoRemoved

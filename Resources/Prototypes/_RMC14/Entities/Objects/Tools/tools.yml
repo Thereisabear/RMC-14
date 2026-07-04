@@ -2,6 +2,7 @@
   parent: Screwdriver
   id: CMScrewdriver
   components:
+  - type: RMCSurgeryScrewdriver
   - type: RandomSprite
     available:
     - enum.DamageStateVisualLayers.Base:
@@ -45,6 +46,7 @@
   parent: Wirecutter
   id: CMWirecutter
   components:
+  - type: RMCSurgeryWirecutter
   - type: Sprite
     sprite: _RMC14/Objects/Tools/wirecutters.rsi
     layers:
@@ -215,6 +217,7 @@
   parent: [Crowbar, RMCBaseMeleeWeapon]
   id: CMCrowbar
   components:
+  - type: RMCSurgeryCrowbar
   - type: Sprite
     sprite: _RMC14/Objects/Tools/crowbar.rsi
     state: icon

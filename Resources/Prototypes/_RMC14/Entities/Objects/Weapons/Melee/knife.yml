@@ -21,6 +21,7 @@
   name: "M5 'Night Raider' bayonet"
   description: The standard-issue bayonet of the Marines. You can slide this knife into your boots, or attach it to the end of a rifle.
   components:
+  - type: RMCSurgeryBayonet
   - type: Clothing
     slots:
     - mask
@@ -211,6 +212,7 @@
   id: CMM11Knife
   description: A military knife designed to be thrown at the enemy.
   components:
+  - type: RMCSurgeryThrowingKnife
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Melee/m11_knife.rsi
     state: icon
@@ -281,6 +283,7 @@
   name: M2132 machete
   description: Latest issue of the Marine Machete.
   components:
+  - type: RMCSurgeryMachete
   - type: Clothing
     slots:
     - belt

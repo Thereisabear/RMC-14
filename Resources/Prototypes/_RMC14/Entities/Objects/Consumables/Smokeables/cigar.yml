@@ -4,6 +4,7 @@
   name: tarback cigar
   description: "Tarbacks by Reisland Tobacco. The Surgeon General has declared that smoking Tarbacks can be hazardous to one’s health. Reisland Tobacco has declared that the Surgeon General is a bitch. Rolled in Columbia."
   components:
+  - type: RMCSurgeryCigarette
   - type: Sprite
     sprite: _RMC14/Objects/Consumable/Smokeables/Cigars/tarback.rsi
     state: unlit-icon

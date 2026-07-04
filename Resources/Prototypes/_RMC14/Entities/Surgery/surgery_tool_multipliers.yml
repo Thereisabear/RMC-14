@@ -15,7 +15,19 @@
     - tool:
       - type: CMScalpel
       multiplier: 1
-    # TODO: PICT system 1.2, bayonet 1.4, kitchen knife 1.4, throwing knife 1.8, glass shard 1.8
+    - tool:
+      - type: RMCSurgeryBayonet
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryKitchenKnife
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryThrowingKnife
+      multiplier: 1.8
+    - tool:
+      - type: RMCSurgeryGlassShard
+      multiplier: 1.8
+    # TODO: PICT system 1.2
 
 # Cauterize
 - type: entity
@@ -30,7 +42,16 @@
     - tool:
       - type: CMCautery
       multiplier: 1
-    # TODO: wound clamp 1.0, PICT system 1.2, cigarette 1.2, lighter 1.4, welding tool 1.6
+    - tool:
+      - type: RMCSurgeryCigarette
+      multiplier: 1.2
+    - tool:
+      - type: RMCSurgeryLighter
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryWelder
+      multiplier: 1.6
+    # TODO: wound clamp 1, PICT system 1.2
 
 # Clamp bleeders
 - type: entity
@@ -42,7 +63,12 @@
     - tool:
       - type: CMHemostat
       multiplier: 1
-    # TODO: wirecutters 1.4, cable coil 1.6
+    - tool:
+      - type: RMCSurgeryWirecutter
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryCableCoil
+      multiplier: 1.6
 
 # Retract
 - type: entity
@@ -60,7 +86,28 @@
     - tool:
       - type: CMScalpel
       multiplier: 1.8
-    # TODO: crowbar 1.4, wirecutters 1.6, maintenance jack 1.6, fork 1.8, bayonet 1.8, kitchen knife 1.8, throwing knife 1.8, glass shard 1.8
+    - tool:
+      - type: RMCSurgeryCrowbar
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryWirecutter
+      multiplier: 1.6
+    - tool:
+      - type: RMCSurgeryFork
+      multiplier: 1.8
+    - tool:
+      - type: RMCSurgeryBayonet
+      multiplier: 1.8
+    - tool:
+      - type: RMCSurgeryKitchenKnife
+      multiplier: 1.8
+    - tool:
+      - type: RMCSurgeryThrowingKnife
+      multiplier: 1.8
+    - tool:
+      - type: RMCSurgeryGlassShard
+      multiplier: 1.8
+    # TODO: maintenance jack 1.6
 
 # Saw
 - type: entity
@@ -72,7 +119,21 @@
     - tool:
       - type: CMBoneSaw
       multiplier: 1
-    # TODO: bayonet 1.2, fireaxe 1.4, machete 1.4, hatchet 1.6, butcher knife 1.6
+    - tool:
+      - type: RMCSurgeryBayonet
+      multiplier: 1.2
+    - tool:
+      - type: RMCSurgeryFireAxe
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryMachete
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryHatchet
+      multiplier: 1.6
+    - tool:
+      - type: RMCSurgeryButcherKnife
+      multiplier: 1.6
 
 # Pry - bone ribs
 - type: entity
@@ -84,7 +145,10 @@
     - tool:
       - type: CMRetractor
       multiplier: 1
-    # TODO: crowbar 1.4, maintenance jack 1.6
+    - tool:
+      - type: RMCSurgeryCrowbar
+      multiplier: 1.4
+    # TODO: maintenance jack 1.6
 
 # Pinch — Remove Larva
 - type: entity
@@ -96,7 +160,12 @@
     - tool:
       - type: CMHemostat
       multiplier: 1
-    # TODO: wirecutters 1.4, fork 1.8
+    - tool:
+      - type: RMCSurgeryWirecutter
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryFork
+      multiplier: 1.8
 
 # Pry I think this is for eye surgery
 - type: entity
@@ -111,9 +180,14 @@
     - tool:
       - type: CMHemostat
       multiplier: 1.2
-    # TODO: fork 1.4, wirecutters 1.6
+    - tool:
+      - type: RMCSurgeryFork
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryWirecutter
+      multiplier: 1.6
 
-# Sever bone — amputation
+# Sever bone
 - type: entity
   id: RMCSeverBoneToolSpeeds
   categories: [ HideSpawnMenu ]
@@ -123,7 +197,21 @@
     - tool:
       - type: CMBoneSaw
       multiplier: 1
-    # TODO: fireaxe 1.2, machete 1.2, hatchet 1.4, butcher knife 1.4, bayonet 1.6
+    - tool:
+      - type: RMCSurgeryFireAxe
+      multiplier: 1.2
+    - tool:
+      - type: RMCSurgeryMachete
+      multiplier: 1.2
+    - tool:
+      - type: RMCSurgeryHatchet
+      multiplier: 1.4
+    - tool:
+      - type: RMCSurgeryBayonet
+      multiplier: 1.6
+    - tool:
+      - type: RMCSurgeryButcherKnife # ETool might be funnier and less issue with inherit
+      multiplier: 1.4
 
 # Bone mend
 - type: entity
@@ -135,6 +223,8 @@
     - tool:
       - type: CMBoneGel
       multiplier: 1
-    # TODO: screwdriver 1.4
+    - tool:
+      - type: RMCSurgeryScrewdriver
+      multiplier: 1.4
 
 

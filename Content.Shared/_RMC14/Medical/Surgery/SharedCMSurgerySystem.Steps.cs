@@ -257,15 +257,17 @@ public abstract partial class SharedCMSurgerySystem
 
     private float SkillDelayMultiplier(EntityUid user, EntityUid step)
     {
-        if (TryComp(step, out CMSurgeryStepComponent? stepComp))
-            return _skills.GetSkillDelayMultiplier(user, stepComp.SkillType);
-        return 1f;
+        if (!TryComp(step, out CMSurgeryStepComponent? stepComp))
+            return 1f;
+
+        return _skills.GetSkillDelayMultiplier(user, stepComp.SkillType);
     }
 
     private float SelfDelayMultiplier(EntityUid user, EntityUid body)
     {
         if (user != body)
             return 1f;
+
         return _config.GetCVar(RMCCVars.RMCSelfSurgeryDelayMultiplier);
     }
 
@@ -284,8 +286,10 @@ public abstract partial class SharedCMSurgerySystem
 
     private float GetToolSuitability(EntityUid step, EntityUid tool)
     {
-        if (TryComp(step, out CMSurgeryStepComponent? stepComp) &&
-            stepComp.ToolMultipliers is { } setId &&
+        if (!TryComp(step, out CMSurgeryStepComponent? stepComp))
+            return 1f;
+
+        if (stepComp.ToolMultipliers is { } setId &&
             _prototypes.TryIndex(setId, out var proto) &&
             proto.TryGetComponent(out SurgeryToolMultipliersComponent? set, _compFactory))
         {

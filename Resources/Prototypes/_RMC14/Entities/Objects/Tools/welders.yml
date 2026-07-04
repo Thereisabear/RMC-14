@@ -131,6 +131,7 @@
   parent: RMCWelderBase
   id: CMWelder
   components:
+  - type: RMCSurgeryWelder
   - type: RequiresEyeProtection
   - type: SolutionContainerManager
     solutions:

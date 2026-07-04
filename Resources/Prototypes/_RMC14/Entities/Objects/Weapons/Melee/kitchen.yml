@@ -4,6 +4,7 @@
   name: knife
   description: Can cut through any food.
   components:
+  - type: RMCSurgeryKitchenKnife
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Melee/Kitchen/knife.rsi
     state: icon
@@ -58,5 +59,6 @@
   name: butcher's cleaver
   description: A huge thing used for chopping and chopping up meat. This includes clowns and clown-by-products.
   components:
+  - type: RMCSurgeryButcherKnife
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Melee/Kitchen/cleaver.rsi

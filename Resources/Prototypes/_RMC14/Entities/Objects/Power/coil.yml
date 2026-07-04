@@ -12,6 +12,7 @@
   description: A coil of power cable.
   suffix: Full
   components:
+  - type: RMCSurgeryCableCoil
   - type: Sprite
     sprite: _RMC14/Objects/Power/coil.rsi
     state: coil3

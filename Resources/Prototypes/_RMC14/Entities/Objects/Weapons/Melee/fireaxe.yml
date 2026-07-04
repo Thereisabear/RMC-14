@@ -4,6 +4,7 @@
   name: fire axe
   suffix: RMC
   components:
+  - type: RMCSurgeryFireAxe
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Melee/fireaxe.rsi
   - type: Clothing

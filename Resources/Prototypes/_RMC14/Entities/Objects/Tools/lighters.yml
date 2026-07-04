@@ -3,6 +3,7 @@
   parent: FlippoLighter
   id: RMCLighterBase
   components:
+  - type: RMCSurgeryLighter
   - type: Item
     size: Tiny
     sprite: Objects/Tools/lighters.rsi
@@ -18,6 +19,7 @@
   parent: CheapLighter
   id: RMCLighterCheapBase
   components:
+  - type: RMCSurgeryLighter
   - type: Item
     size: Tiny
     sprite: _RMC14/Objects/Tools/Lighters/basic.rsi
