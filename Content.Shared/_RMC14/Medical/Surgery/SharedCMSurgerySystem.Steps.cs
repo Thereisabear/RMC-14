@@ -248,31 +248,28 @@ public abstract partial class SharedCMSurgerySystem
         var baseDelay = CompOrNull<CMSurgeryStepComponent>(step)?.Delay ?? CMSurgeryStepComponent.DefaultDelay;
 
         var multiplier =
-            GetSkillMultiplier(user, step) *
-            GetToolMultiplier(user, step, validTools) *
-            GetSurfaceMultiplier(body) *
-            GetSelfMultiplier(user, body);
-
+            SkillDelayMultiplier(user, step) *
+            ToolDelayMultiplier(user, step, validTools) *
+            SurfaceDelayMultiplier(body) *
+            SelfDelayMultiplier(user, body);
         return baseDelay * MathF.Max(0.1f, multiplier);
     }
 
-    private float GetSkillMultiplier(EntityUid user, EntityUid step)
+    private float SkillDelayMultiplier(EntityUid user, EntityUid step)
     {
         if (TryComp(step, out CMSurgeryStepComponent? stepComp))
             return _skills.GetSkillDelayMultiplier(user, stepComp.SkillType);
-
         return 1f;
     }
 
-    private float GetSelfMultiplier(EntityUid user, EntityUid body)
+    private float SelfDelayMultiplier(EntityUid user, EntityUid body)
     {
         if (user != body)
             return 1f;
-
         return _config.GetCVar(RMCCVars.RMCSelfSurgeryDelayMultiplier);
     }
 
-    private float GetToolMultiplier(EntityUid user, EntityUid step, HashSet<EntityUid>? validTools)
+    private float ToolDelayMultiplier(EntityUid user, EntityUid step, HashSet<EntityUid>? validTools)
     {
         if (validTools == null || validTools.Count == 0)
             return 1f;
@@ -282,7 +279,6 @@ public abstract partial class SharedCMSurgerySystem
             if (validTools.Contains(held))
                 return GetToolSuitability(step, held);
         }
-
         return 1f;
     }
 
@@ -306,7 +302,7 @@ public abstract partial class SharedCMSurgerySystem
         return 1f;
     }
 
-    private float GetSurfaceMultiplier(EntityUid body)
+    private float SurfaceDelayMultiplier(EntityUid body)
     {
         if (TryComp(body, out BuckleComponent? buckle) &&
             TryComp(buckle.BuckledTo, out RMCSurgerySurfaceComponent? surface))
