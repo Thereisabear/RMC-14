@@ -28,5 +28,5 @@ rmc-ammo-examine-flaremodule = Ammo: { -ammo-flaremodule }.
 rmc-ammo-examine-re700 = Ammo: { -ammo-re700 }.
 
 # APC
--ammo-frontalcannon = [color=goldenrod]BH-56 ammo crate[/color]
+-ammo-frontalcannon = [color=goldenrod]BH-56 ammo box[/color]
 rmc-ammo-examine-frontalcannon = Ammo: { -ammo-frontalcannon }.

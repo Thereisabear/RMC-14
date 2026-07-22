@@ -11,24 +11,24 @@ ent-VehicleTankLTAAAPMinigun = LTAA-AP Minigun
         { rmc-ammo-examine-ltaaap-minigun }
 ent-VehicleTankAceAutocannon = AC3-E Autocannon
     .printer-desc = A precise long range autocannon system that shoots flak rounds.
-        {rmc-ammo-examine-ace-autocannon}
+        { rmc-ammo-examine-ace-autocannon }
 ent-VehicleTankDragonFlamer = DRG-N Flamer
     .printer-desc = A powerful flamer system designed to expel high-combustion napalm in a wide area.
-        {rmc-ammo-examine-drgn-flamer}
+        { rmc-ammo-examine-drgn-flamer }
 
 ## Tank - Secondary Weapons
 ent-VehicleTankFlamer = M34-V Flamer
     .printer-desc = A M34 designed specifically for a tank's hardpoint.
-        {rmc-ammo-examine-flamer}
+        { rmc-ammo-examine-flamer }
 ent-VehicleTankGrenadeLauncher = M85-V Grenade Launcher
     .printer-desc = A M85 designed specifically for a tank's hardpoint.
-        {rmc-ammo-examine-grenadelauncher}
+        { rmc-ammo-examine-grenadelauncher }
 ent-VehicleTankTowLauncher = TOW Launcher
     .printer-desc = A rocket launcher mounted on a tank's secondary hardpoint.
-        {rmc-ammo-examine-tow-launcher}
+        { rmc-ammo-examine-tow-launcher }
 ent-VehicleTankM56Cupola = ML56-V Cupola
     .printer-desc = A ML66 variant modified specifically for a tank's hardpoint.
-        {rmc-ammo-examine-ml56v-cupola}
+        { rmc-ammo-examine-ml56v-cupola }
 
 ## Tank - Armor
 ent-VehicleTankArmorBallistic = Ballistic Armor Plating
@@ -49,10 +49,10 @@ ent-VehicleTankOverdriveEnhancer = Overdrive Enhancer
     .printer-desc = Increases movement speed.
 ent-VehicleTankRocketLauncher = Smoke Launcher
     .printer-desc = Launches smoke grenades in all directions.
-        {rmc-ammo-examine-smokelauncher}
+        { rmc-ammo-examine-smokelauncher }
 ent-VehicleTankFlareModule = Flare Module
     .printer-desc = Launches flares in all directions.
-        {rmc-ammo-examine-flaremodule}
+        { rmc-ammo-examine-flaremodule }
 ent-VehicleTankArtilleryModule = Artillery Module
     .printer-desc = Enables long range optics for the tank's gunner.
 
@@ -68,10 +68,10 @@ ent-VehicleHumveeTurret = Humvee Turret
         Has hardpoints for a RE700 [color=goldenrod]cannon[/color] and smoke [color=goldenrod]launcher[/color].
 ent-VehicleHumveeARCCannon = ARC RE700 Cannon
     .printer-desc = Burst fire sentry mode requires the ARC deployed.
-        {rmc-ammo-examine-re700}
+        { rmc-ammo-examine-re700 }
 ent-VehicleHumveeLauncher = Humvee Smoke Launcher
     .printer-desc = A smoke launcher for the Humvee turret.
-        {rmc-ammo-examine-smokelauncher}
+        { rmc-ammo-examine-smokelauncher }
 ent-VehicleHumveeSnowplow = Humvee Snowplow
     .printer-desc = A reinforced plow for the front of the Humvee.
 ent-VehicleHumveeOverlight = Humvee Overlight
@@ -84,20 +84,20 @@ ent-VehicleHumveeWheel = Humvee Wheels
 ## Humvee
 ent-VehicleHumveeCannon = Humvee RE700 Cannon
     .printer-desc = A full auto IFF rotary cannon for the Humvee turret.
-        {rmc-ammo-examine-re700}
+        { rmc-ammo-examine-re700 }
 
 ## APC
 ent-RMCAPCDualCannon = APC PARS-159 Dual Cannon
     .printer-desc = A fixed double barreled IFF turret for the APC.
-        {rmc-ammo-examine-ace-autocannon}
+        { rmc-ammo-examine-ace-autocannon }
 ent-RMCAPCFrontCannon = APC BH-56 Frontal Cannon
     .printer-desc = A fixed dual barreled cannon for the APC.
-        {rmc-ammo-examine-frontalcannon}
+        { rmc-ammo-examine-frontalcannon }
 ent-RMCAPCCommsRelay = APC Comms Relay
     .printer-desc = A communications relay that extends the APC's sensor range.
 ent-RMCAPCFlareLauncher = APC M95-V Flare Launcher
     .printer-desc = A flare launcher for APC hardpoints.
-        {rmc-ammo-examine-flaremodule}
+        { rmc-ammo-examine-flaremodule }
 ent-RMCAPCFreightStorage = APC Freight Storage
     .printer-desc = A cargo pod attachment for APC hardpoints
 ent-RMCAPCWheel = APC Wheels

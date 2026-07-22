@@ -62,7 +62,7 @@
   parent: VehicleTankHardpointBase
   id: VehicleTankGrenadeLauncher
   name: tank grenade launcher
-  description: A tank-mounted grenade launcher hardpoint.
+  description: A tank-mounted grenade launcher system.
   components:
   - type: Sprite
     state: glauncher
