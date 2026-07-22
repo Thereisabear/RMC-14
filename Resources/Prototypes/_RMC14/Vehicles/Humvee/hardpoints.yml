@@ -124,8 +124,8 @@
 - type: entity
   parent: VehicleHumveeHardpointBase
   id: VehicleHumveeCannon
-  name: humvee cannon
-  description: A fixed forward cannon for a humvee hardpoint.
+  name: Humvee RE700 Cannon
+  description: An IFF rotary cannon for a Humvee turret.
   components:
   - type: Sprite
     state: humveecannon
@@ -187,8 +187,8 @@
 - type: entity
   parent: VehicleHumveeCannon
   id: VehicleHumveeARCCannon
-  name: ARC cannon
-  description: A burst-fire cannon configured for an ARC humvee turret.
+  name: ARC RE700Cannon
+  description: A burst-fire cannon configured for an ARC Humvee turret.
   components:
   - type: Gun
     fireRate: 5 # 0.2 seconds between shots
@@ -201,8 +201,8 @@
 - type: entity
   parent: VehicleHumveeHardpointBase
   id: VehicleHumveeLauncher
-  name: humvee launcher
-  description: A launcher hardpoint for a humvee.
+  name: humvee smoke launcher
+  description: A smoke launcher system for a Humvee.
   components:
   - type: Sprite
     state: humveelauncher

@@ -1,7 +1,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoLTBCannon
-  name: LTB cannon magazines crate (x6)
+  name: LTB cannon shells crate (x6)
   components:
   - type: StorageFill
     contents:
@@ -11,7 +11,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoLTAAAP
-  name: LTAA-AP minigun magazines crate (x3)
+  name: LTAA-AP minigun ammo crate (x3)
   components:
   - type: StorageFill
     contents:
@@ -31,7 +31,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoDragonFlamer
-  name: DRG-N offensive flamer unit fuel tanks crate (x3)
+  name: DRG-N napalm fuel crate (x3)
   components:
   - type: StorageFill
     contents:
@@ -51,7 +51,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoGrenadeLauncher
-  name: M92T grenade launcher magazines crate (x5)
+  name: M85-V grenade cartridges crate (x5)
   components:
   - type: StorageFill
     contents:
@@ -61,7 +61,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoSmokeLauncher
-  name: M34A2-A multipurpose turret smoke screen magazines crate (x4)
+  name: AGM-74S Smoke Cartridges crate (x4)
   components:
   - type: StorageFill
     contents:
@@ -71,7 +71,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoTowLauncher
-  name: TOW launcher magazines crate (x3)
+  name: TOW launcher pods crate (x3)
   components:
   - type: StorageFill
     contents:
@@ -81,7 +81,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoCupola
-  name: M56 cupola magazines crate (x2)
+  name: ML56-V Cupola ammo crate (x2)
   components:
   - type: StorageFill
     contents:
@@ -91,7 +91,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoLZRNFlamer
-  name: LZR-N flamer unit fuel tanks crate (x2)
+  name: M34-V flamer fuel crate (x2)
   components:
   - type: StorageFill
     contents:
@@ -101,7 +101,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoFrontalCannon
-  name: RE-RE700 frontal cannon magazines crate (x2)
+  name: BH-56 ammo boxes crate (x2)
   components:
   - type: StorageFill
     contents:
@@ -111,7 +111,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoFlareLauncher
-  name: M-87F flare launcher magazines crate (x4)
+  name: M95-V Flare Cartridges crate (x4)
   components:
   - type: StorageFill
     contents:
@@ -121,7 +121,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateVehicleAmmoRotaryCannon
-  name: RE700 rotary cannon magazines crate (x3)
+  name: RE700 Cannon drums crate (x3)
   components:
   - type: StorageFill
     contents:

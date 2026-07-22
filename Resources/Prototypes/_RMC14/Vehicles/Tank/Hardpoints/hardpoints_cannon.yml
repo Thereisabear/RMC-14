@@ -163,7 +163,7 @@
 - type: entity
   parent: VehicleTankHardpointBase
   id: VehicleTankAceAutocannon
-  name: ACE autocannon
+  name: AC3-E autocannon
   description: A precise autocannon system that mounts on the primary hardpoint of a Tank.
   components:
   - type: Sprite
@@ -233,8 +233,8 @@
 - type: entity
   parent: VehicleTankHardpointBase
   id: VehicleTankDragonFlamer
-  name: DRGN flamer
-  description: A High Combustion Flamer system designed to mount on the primary hardpoint of a Tank.
+  name: DRG-N flamer
+  description: A powerful flamer system designed to expel high-combustion napalm.
   components:
   - type: Sprite
     state: drgn_flamer

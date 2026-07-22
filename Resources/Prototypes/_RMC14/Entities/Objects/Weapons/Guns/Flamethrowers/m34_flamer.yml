@@ -241,8 +241,8 @@
 - type: entity
   parent: RMCTankFlamer
   id: VehicleFlamerTankLZRN
-  name: LZR-N flame tank
-  description: A fuel tank for the LZR-N flame unit. Handle with care.
+  name: M34-V fuel tank
+  description: A fuel tank for the M34-V flamer system. Handle with care.
   components:
   - type: SolutionContainerManager
     solutions:

@@ -34,8 +34,8 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxFrontal
-  name: frontal cannon ammo crate
-  description: Ammunition for frontal vehicle cannons.
+  name: BH-56 Frontal ammo box
+  description: Ammunition for the BH-56 Frontal Cannons.
   components:
   - type: Sprite
     layers:
@@ -58,8 +58,8 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxCupola
-  name: cupola cannon ammo crate
-  description: Ammunition for cupola-mounted vehicle cannons.
+  name: ML56-V Cupola ammo box
+  description: Ammunition for the ML56-V Cupola.
   components:
   - type: Sprite
     layers:
@@ -83,7 +83,7 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxGrenadeLauncher
-  name: grenade launcher ammo crate
+  name: M85-V grenade cartridges
   description: Ammunition for vehicle grenade launchers.
   components:
   - type: Sprite
@@ -108,7 +108,7 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxSmokeLauncher
-  name: smoke launcher ammo crate
+  name: AGM-74S smoke cartridges
   description: Ammunition for vehicle smoke launchers.
   components:
   - type: Sprite
@@ -134,7 +134,7 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxFlareLauncher
-  name: flare launcher ammo crate
+  name: M95-V Flare Cartridge
   description: Ammunition for vehicle flare launchers.
   components:
   - type: Sprite
@@ -159,7 +159,7 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxLTBCannon
-  name: LTB cannon ammo crate
+  name: LTB cannon shells
   description: Ammunition for light tank cannons.
   components:
   - type: Sprite
@@ -184,7 +184,7 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxRocketLauncher
-  name: rocket launcher ammo crate
+  name: TOW rocket launcher pod
   description: Ammunition for vehicle rocket launchers.
   components:
   - type: Sprite
@@ -209,8 +209,8 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxAceAutocannon
-  name: ACE autocannon ammo crate
-  description: Ammunition for ACE autocannons.
+  name: AC3-E autocannon magazine
+  description: Ammunition for AC3-E autocannons.
   components:
   - type: Sprite
     layers:
@@ -229,12 +229,12 @@
     amount: 40
     max: 40
     bulletType: VehicleAmmoBoxAceAutocannon
-    usedIn: Tank ACE autocannon, APC Boyars dualcannon
+    usedIn: Tank AC3-E autocannon, APC PARS-159 dual cannon
 
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxRERotaryCannon
-  name: RE700 rotary cannon ammo crate
+  name: RE700 Cannon drum
   description: Ammunition for RE700 rotary cannons.
   components:
   - type: Sprite
@@ -259,8 +259,8 @@
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxDragonFlameTank
-  name: DRGN flame tank
-  description: Fuel for DRGN flamethrower systems.
+  name: DRG-N napalm fuel tank
+  description: Fuel for DRG-N flamer systems.
   components:
   - type: Sprite
     layers:
@@ -279,12 +279,12 @@
     amount: 60
     max: 60
     bulletType: VehicleAmmoBoxDragonFlameTank
-    usedIn: Tank DRG-N offensive flamer
+    usedIn: Tank DRG-N flamer
 
 - type: entity
   parent: VehicleAmmoBoxBase
   id: VehicleAmmoBoxLTAA
-  name: LTAA ammo crate
+  name: LTAA-AP ammo box
   description: Ammunition for LTAA systems.
   components:
   - type: Sprite

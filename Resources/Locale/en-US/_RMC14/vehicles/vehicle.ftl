@@ -117,10 +117,3 @@ rmc-vehicle-key-examine-blank = [color=lightblue]This blank key can be imprinted
 rmc-vehicle-key-examine-duplicator = [color=lightblue]This blank key can copy an existing vehicle key by using it on that key.[/color]
 rmc-vehicle-key-examine-bound = [color=lightblue]This key is bound to a vehicle lock.[/color]
 rmc-hardpoint-remove-blocked = That hardpoint is fixed in place.
-
-
-## Hardpoint Ammo Examine
-rmc-ammo-examine-ltb-cannon = Accepts [color=goldenrod]LTB cannon shells[/color].
-rmc-ammo-examine-ltaaap-minigun = Accepts [color=goldenrod]LTAA-[color=SeaGreen]AP[/color] cans.[/color]
-rmc-ammo-examine-ace-autocannon = Accepts [color=goldenrod]20mm ACE magazines[/color].
-rmc-ammo-examine-drgn-flamer = Accepts [color=goldenrod]DRGN napalm tanks[/color].
