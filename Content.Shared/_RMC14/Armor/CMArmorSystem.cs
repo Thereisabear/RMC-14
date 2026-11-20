@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Text;
 using Content.Shared._RMC14.Map;
 using Content.Shared._RMC14.Medical.Surgery;
@@ -395,22 +395,38 @@ public sealed class CMArmorSystem : EntitySystem
         var mod = EnsureComp<RMCArmorModifierComponent>(ent);
 
         args.Damage = new DamageSpecifier(args.Damage);
-        if (!HasComp<XenoComponent>(ent))
-        {
-            if (HasComp<RMCBulletComponent>(args.Tool))
-            {
-                Resist(args.Damage, ev.Bullet, ArmorGroup, mod.RangedArmorModifier);
-            }
-            else if (HasComp<MeleeWeaponComponent>(args.Tool))
-            {
-                Resist(args.Damage, ev.Melee, ArmorGroup, mod.MeleeArmorModifier);
-            }
-            Resist(args.Damage, ev.Bio, BioGroup, mod.RangedArmorModifier);
-        }
-        else
+        if (HasComp<XenoComponent>(ent))
         {
             Resist(args.Damage, ev.XenoArmor, ArmorGroup, mod.RangedArmorModifier);
+            return;
         }
+
+        (int Armor, int Modifier)? resistBy = args.ResistBy switch
+        {
+            ArmorType.Melee => (ev.Melee, mod.MeleeArmorModifier),
+            ArmorType.Bullet => (ev.Bullet, mod.RangedArmorModifier),
+            ArmorType.Bio => (ev.Bio, mod.RangedArmorModifier),
+            ArmorType.Explosion => (ev.ExplosionArmor, mod.RangedArmorModifier),
+            _ => null,
+        };
+
+        if (resistBy is { } swap)
+        {
+            Resist(args.Damage, swap.Armor, ArmorGroup, swap.Modifier);
+            Resist(args.Damage, swap.Armor, BioGroup, swap.Modifier);
+            return;
+        }
+
+        if (HasComp<RMCBulletComponent>(args.Tool))
+        {
+            Resist(args.Damage, ev.Bullet, ArmorGroup, mod.RangedArmorModifier);
+        }
+        else if (HasComp<MeleeWeaponComponent>(args.Tool))
+        {
+            Resist(args.Damage, ev.Melee, ArmorGroup, mod.MeleeArmorModifier);
+        }
+
+        Resist(args.Damage, ev.Bio, BioGroup, mod.RangedArmorModifier);
     }
 
     private void Resist(DamageSpecifier damage, int armor, ProtoId<DamageGroupPrototype> group, int mult)
