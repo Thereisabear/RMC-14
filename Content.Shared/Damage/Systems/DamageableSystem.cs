@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry;
 using Content.Shared._RMC14.Damage;
+using Content.Shared._RMC14.Armor; // RMC14
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
@@ -182,7 +183,8 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, EntityUid? tool = null, int armorPiercing = 0, bool shouldIgnoreClawLogic = false)
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, EntityUid? tool = null, int armorPiercing = 0, bool shouldIgnoreClawLogic = false,
+            ArmorType? resistBy = null) // RMC14
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -212,7 +214,7 @@ namespace Content.Shared.Damage
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
 
-                var ev = new DamageModifyEvent(damage, origin, tool, armorPiercing, shouldIgnoreClawLogic);
+                var ev = new DamageModifyEvent(damage, origin, tool, armorPiercing, shouldIgnoreClawLogic, resistBy); // RMC14
                 RaiseLocalEvent(uid.Value, ev);
                 damage = ev.Damage;
 
@@ -407,8 +409,10 @@ namespace Content.Shared.Damage
         public EntityUid? Tool;
         public int ArmorPiercing;
         public bool ShouldIgnoreClawLogic;
+        public ArmorType? ResistBy; // RMC14
 
-        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, EntityUid? tool = null, int armorPiercing = 0, bool shouldIgnoreClawLogic = false)
+        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, EntityUid? tool = null, int armorPiercing = 0, bool shouldIgnoreClawLogic = false,
+            ArmorType? resistBy = null) // RMC14
         {
             OriginalDamage = damage;
             Damage = damage;
@@ -416,6 +420,7 @@ namespace Content.Shared.Damage
             Tool = tool;
             ArmorPiercing = armorPiercing;
             ShouldIgnoreClawLogic = shouldIgnoreClawLogic;
+            ResistBy = resistBy; // RMC14
         }
     }
 
