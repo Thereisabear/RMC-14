@@ -1,3 +1,4 @@
+using Content.Shared._RMC14.Armor;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 
@@ -8,6 +9,9 @@ public sealed partial class CatalyticTailStabComponent : Component
 {
     [DataField, AutoNetworkedField]
     public DamageSpecifier DamagePerStack = new();
+
+    [DataField, AutoNetworkedField]
+    public ArmorType? ResistBy;
 
     [DataField, AutoNetworkedField]
     public int MinStacksToBuff = 10;

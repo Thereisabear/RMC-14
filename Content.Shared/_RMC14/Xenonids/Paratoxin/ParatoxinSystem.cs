@@ -124,7 +124,11 @@ public sealed class ParatoxinSystem : EntitySystem
         if (stacks == 0)
             return;
 
-        _damage.TryChangeDamage(args.Hit, xeno.Comp.DamagePerStack * stacks, origin: xeno, tool: xeno);
+        _damage.TryChangeDamage(args.Hit,
+            xeno.Comp.DamagePerStack * stacks,
+            origin: xeno,
+            tool: xeno,
+            resistBy: xeno.Comp.ResistBy);
 
         if (stacks >= xeno.Comp.MinStacksToBuff)
         {

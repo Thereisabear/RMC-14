@@ -69,7 +69,7 @@
   - type: XenoAcid
   - type: XenoSlowingSpit
     plasmaCost: 30
-    projectileId: XenoParatoxinSpitProjectile 
+    projectileId: XenoParatoxinSpitProjectile
   - type: MeleeWeapon
     damage:
       groups:
@@ -83,6 +83,7 @@
     damagePerStack:
       types:
         Heat: 1.2
+    resistBy: Melee
   - type: XenoParatoxinSlashApply
   - type: XenoDrainingBite
   - type: MovementSpeedModifier
